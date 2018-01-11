@@ -4,13 +4,19 @@
 IF ELSE IF WITH LIST
 '''
 
-user = {'admin': False, 'active': False, 'name': 'John'}
+user = [
+    {'admin': False, 'active': False, 'name': 'John'},
+    {'admin': True, 'active': False, 'name': 'Mark'},
+    {'admin': False, 'active': True, 'name': 'Paul'},
+    {'admin': True, 'active': True, 'name': 'Mike'}
+]
 
-if (user['admin'] and user['active']):
-    print("ACTIVE - (ADMIN) {}".format(user['name']))
-elif (user['active']):
-    print("ACTIVE {}".format(user['name']))
-elif (user['admin']):
-    print("(ADMIN) {}".format(user['name']))
-else:
-    print("{}".format(user['name']))
+for usr in user:
+    if (usr['admin'] and usr['active']):
+        print("ACTIVE - (ADMIN) {}".format(usr['name']))
+    elif (usr['active']):
+        print("ACTIVE {}".format(usr['name']))
+    elif (usr['admin']):
+        print("(ADMIN) {}".format(usr['name']))
+    else:
+        print("{}".format(usr['name']))
